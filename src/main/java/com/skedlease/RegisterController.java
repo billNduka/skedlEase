@@ -8,17 +8,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.Response;
 
+
 public class RegisterController
 {
-
     @FXML
     private TextField email;
     @FXML
@@ -27,14 +28,39 @@ public class RegisterController
     private TextField lastName;
     @FXML
     private TextField phoneNumber;
-
+    @FXML
+    private TextField matricNumber;
     @FXML
     private PasswordField password1;
     @FXML
     private PasswordField password2;
 
+    private Alert successAlert;
+    private Alert existsAlert;
+    private Alert failureAlert;
+
+    public void createAlerts()
+    {
+        successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Registration status");
+        successAlert.setHeaderText("Registration status");
+        successAlert.setContentText("Registration was successful");
+
+        existsAlert = new Alert(Alert.AlertType.INFORMATION);
+        existsAlert.setTitle("Registration status");
+        existsAlert.setHeaderText("Registration status");
+        existsAlert.setContentText("The user with this email address already exists");
+
+        failureAlert = new Alert(Alert.AlertType.ERROR);
+        failureAlert.setTitle("Registration status");
+        failureAlert.setHeaderText("Registration status");
+        failureAlert.setContentText("Registration was unsuccessful");
+    }
     public void submit(ActionEvent e) throws IOException
     {
+        System.out.println("submitting...");
+        createAlerts();
+
         String token = App.getCSRFToken();
 
         OkHttpClient client = new OkHttpClient();
@@ -45,6 +71,7 @@ public class RegisterController
         json.put("last_name", lastName.getText());
         json.put("phone_number", phoneNumber.getText());
         json.put("user_role", "patient");
+        json.put("matric_number", matricNumber.getText());
         json.put("password", password1.getText());
         json.put("password2", password2.getText());
 
@@ -64,12 +91,16 @@ public class RegisterController
 
             if(response.code() == 201)
             {
-                System.out.println(response.body().string());
+                successAlert.show();
+                App.setRoot("primary");
+            } else if(response.code() == 400) 
+            {
+                existsAlert.showAndWait();
             } else
             {
+                failureAlert.showAndWait();
                 System.out.println(response.code());
             }
-            System.out.println(response.body().string());
 
         } catch(IOException e1)
         {
