@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -21,6 +22,9 @@ public class LoginController {
     
     @FXML
     private PasswordField password;
+
+    @FXML
+    private CheckBox isAdmin;
 
     private Alert successAlert;
     private Alert loggingInAlert;
@@ -45,9 +49,10 @@ public class LoginController {
         failureAlert.setContentText("Login unsuccessful");
     }
 
+    
+
     public void submit(ActionEvent e) {
         System.out.println("Logging in...");
-        loggingInAlert.show();
 
         String token = App.getCSRFToken(); 
         OkHttpClient client = new OkHttpClient();
@@ -72,13 +77,25 @@ public class LoginController {
             Response response = call.execute();
 
             if (response.isSuccessful()) {
-                successAlert.show();
-                App.setRoot("primary");
+
+                JSONObject responseJSON = new JSONObject(response.body().string());
+                String role = responseJSON.getJSONObject("user").getString("role");
+
+                if(role.equals("admin"))
+                {
+                    App.setRoot("admin");
+                } else if(role.equals("doctor"))
+                {
+
+                } else
+                {
+                    App.setRoot("primary");
+                }
+                    
             } else {
                 System.out.println("Status: " + response.code());
                 String responseText = response.body().string();
                 System.out.println("Response: " + responseText);
-                failureAlert.showAndWait();
             }
 
         } catch (IOException | org.json.JSONException ex) {
