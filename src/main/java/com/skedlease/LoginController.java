@@ -2,8 +2,10 @@ package com.skedlease;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import okhttp3.Call;
@@ -12,7 +14,12 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.Cookie;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.io.IOException;
+import java.util.List;
+
 import org.json.JSONObject;
 
 public class LoginController {
@@ -29,7 +36,8 @@ public class LoginController {
     private Alert successAlert;
     private Alert loggingInAlert;
     private Alert failureAlert;
-
+    public String cookie;
+    public String csrfCookie;
 
     public void createAlerts()
     {
@@ -55,7 +63,9 @@ public class LoginController {
         System.out.println("Logging in...");
 
         String token = App.getCSRFToken(); 
-        OkHttpClient client = new OkHttpClient();
+        App.token = token;
+        System.out.println(token);
+        OkHttpClient client = App.httpClient;
         createAlerts();
 
         try {
@@ -83,7 +93,18 @@ public class LoginController {
 
                 if(role.equals("admin"))
                 {
+                    for (Cookie cookie : App.cookieJar.getAllCookies()) {
+                        System.out.println(cookie.name() + " = " + cookie.value());
+                        if (cookie.name().equals("csrftoken")) {
+                            App.csrfCookie = cookie.value();
+                        }
+                        if (cookie.name().equals("sessionid")) {
+                            App.sessionCookie = cookie.value(); 
+                        }
+                    }
+
                     App.setRoot("admin");
+
                 } else if(role.equals("doctor"))
                 {
 
@@ -97,6 +118,7 @@ public class LoginController {
                 String responseText = response.body().string();
                 System.out.println("Response: " + responseText);
             }
+            
 
         } catch (IOException | org.json.JSONException ex) {
             ex.printStackTrace();
