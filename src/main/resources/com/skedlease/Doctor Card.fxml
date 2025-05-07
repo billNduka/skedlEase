@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="doctorCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="341.0" prefHeight="215.0" prefWidth="527.0" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 2%;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.DoctorCardController">
    <children>
-      <Label fx:id="nameLabel" layoutX="14.0" layoutY="31.0" prefHeight="37.0" prefWidth="221.0" text="Nduka David Nduka">
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="31.0" prefHeight="37.0" prefWidth="439.0" text="Nduka David Nduka">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>

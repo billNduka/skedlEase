@@ -13,6 +13,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import java.io.IOException;
 import org.json.JSONObject;
+import org.json.JSONArray;
+import java.util.*;
 
 import java.io.IOException;
 
@@ -20,14 +22,16 @@ public class AdminController {
     @FXML
     private VBox doctorListContainer;
 
-    public String cookie;
-    public String csrfCookie;
+    private JSONArray allDoctors;
+    private List<String> fullNames = new ArrayList<>();
+    private List<String> doctorSpecialties = new ArrayList<>();
+    
 
     @FXML
     public void initialize() 
     {
-        loadDoctorCard();
         loadDoctors();
+        loadDoctorCard(fullNames, doctorSpecialties);
     }
 
     public void loadDoctors()
@@ -41,16 +45,10 @@ public class AdminController {
             String token = App.getCSRFToken();
             OkHttpClient client = App.httpClient;
 
-            JSONObject requestDoctors = new JSONObject(); 
-
-            MediaType JSON_TYPE = MediaType.get("application/json; charset=utf-8");
-            //RequestBody requestBody = RequestBody.create(requestDoctors.toString(), JSON_TYPE);
-
             Request request = new Request.Builder()
                 .url("https://skedlease.onrender.com/doctors/")
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Referer", "https://skedlease.onrender.com/")
-                // .addHeader("Cookie", "csrftoken=" + csrfCookie + "; " + cookie)
                 .addHeader("X-CSRFToken", token)
                 .get()
                 .build();
@@ -59,10 +57,66 @@ public class AdminController {
             Response response = call.execute();
             String responseBody = response.body().string();
 
-            if (response.isSuccessful()) {
-                
-                //JSONObject responseJSON = new JSONObject(responseBody);
-                   
+            if (response.isSuccessful()) {   
+                allDoctors = new JSONArray(responseBody);
+
+                for(int i =  0; i < allDoctors.length(); i++)
+                {
+                    JSONObject doctor = allDoctors.getJSONObject(i);
+                    JSONObject user = doctor.getJSONObject("user");
+
+                    String fullName = user.getString("first_name") + " " + user.getString("last_name");
+                    fullNames.add(fullName);
+
+
+                    JSONArray specialitiesArray = doctor.getJSONArray("specialities");
+                    StringBuilder specialities = new StringBuilder();
+                    for (int j = 0; j < specialitiesArray.length(); j++) 
+                    {
+                        switch (specialitiesArray.getInt(j)) 
+                        {
+                            case 1:
+                                specialities.append("cardiology");
+                                break;
+                            case 2:
+                                specialities.append("General Medicine");
+                                break;
+                            case 3:
+                                specialities.append("Dentistry");
+                                break;
+                            case 4:
+                                specialities.append("Dermatology");
+                                break;
+                            case 5:
+                                specialities.append("Oncology");
+                                break;
+                            case 6:
+                                specialities.append("Obstetrician-Gynecologist");
+                                break;
+                            case 7:
+                                specialities.append("Nephrology");
+                                break;
+                            case 8:
+                                specialities.append("Internal Medicine");
+                                break;
+                            case 9:
+                                specialities.append("Neurology");
+                                break;
+                            default:
+                                specialities.append("");
+                            break;
+                        }
+
+                        if (j < specialitiesArray.length() - 1) 
+                        {
+                            specialities.append(", ");
+                        }
+                    }
+                    doctorSpecialties.add(specialities.toString());
+                    
+
+                }
+
                 System.out.println("Response: " + responseBody);
 
             } else {
@@ -74,27 +128,17 @@ public class AdminController {
         }
     }
 
-    public void loadDoctorCard()
+    public void loadDoctorCard(List<String> fullNames, List<String> doctorSpecialities)
     {
         try
         {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < fullNames.size(); i++) 
+            {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Doctor Card.fxml"));
                 Node card = loader.load();
                 DoctorCardController doctorCardController = loader.getController();
             
-                switch (i) {
-                    case 0:
-                        doctorCardController.setDoctorData("John Medicine", "dentistry");
-                        break;
-                    case 1:
-                        doctorCardController.setDoctorData("Yuri Lowenthal", "pediatrics");
-                        break;
-                    case 2:
-                        doctorCardController.setDoctorData("Dave Nduka", "surgery");
-                        break;
-                }
-            
+                doctorCardController.setDoctorData(fullNames.get(i), doctorSpecialities.get(i));            
                 doctorListContainer.getChildren().add(card);
             }
         }

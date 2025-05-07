@@ -94,7 +94,6 @@ public class LoginController {
                 if(role.equals("admin"))
                 {
                     for (Cookie cookie : App.cookieJar.getAllCookies()) {
-                        System.out.println(cookie.name() + " = " + cookie.value());
                         if (cookie.name().equals("csrftoken")) {
                             App.csrfCookie = cookie.value();
                         }
