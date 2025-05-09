@@ -147,4 +147,16 @@ public class AdminController {
             e.printStackTrace();
         }
     }
+
+    public void addDoctor()
+    {
+        try
+        {
+            App.setRoot("Register Doctor");
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
