@@ -61,31 +61,6 @@ src/
             ├── register.fxml
             └── primary.fxml
 
-Contributing
-
-1. Fork the repo
-
-
-2. Create a new branch: git checkout -b feature-name
-
-
-3. Make your changes and commit
-
-
-4. Push to your fork and submit a pull request
-
-
-
 License
 
 This project is for educational purposes and currently has no official license.
-
-
----
-
-If you'd like to customize this or add images/badges/documentation links, I can help with that too. Let me know!
-
----
-
-You can save this as `README.md` at the root of your project and commit it to Git. Want me to help with that too?
-
