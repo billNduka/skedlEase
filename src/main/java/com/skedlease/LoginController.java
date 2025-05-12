@@ -80,6 +80,7 @@ public class LoginController {
                 .url("https://skedlease.onrender.com/user/login/")
                 .addHeader("Content-Type", "application/json")
                 .addHeader("X-CSRFToken", token)
+                .addHeader("Referer", "https://skedlease.onrender.com/")
                 .post(body)
                 .build();
 
@@ -89,7 +90,8 @@ public class LoginController {
             if (response.isSuccessful()) {
 
                 JSONObject responseJSON = new JSONObject(response.body().string());
-                String role = responseJSON.getJSONObject("user").getString("role");
+                //System.out.println(responseJSON.toString());
+                String role = responseJSON.getJSONObject("user").getString("user_role");
 
                 if(role.equals("admin"))
                 {
