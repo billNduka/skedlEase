@@ -46,13 +46,13 @@
                   <Font name="Arial Black" size="40.0" />
                </font>
             </Label>
-            <ComboBox fx:id="specializations" layoutX="31.0" layoutY="448.0" prefHeight="15.0" prefWidth="379.0" promptText="Specialization" />
-            <Label fx:id="specialization1" layoutX="31.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0" text="SPEC 1">
+            <ComboBox fx:id="specializations" layoutX="31.0" layoutY="448.0" onAction="#getSelectedSpecialization" prefHeight="15.0" prefWidth="379.0" promptText="Specialization" />
+            <Label fx:id="specialization1" layoutX="31.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="specialization2" layoutX="267.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0" text="SPEC 2">
+            <Label fx:id="specialization2" layoutX="267.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
