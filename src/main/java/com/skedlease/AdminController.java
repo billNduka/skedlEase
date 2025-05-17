@@ -35,10 +35,6 @@ public class AdminController {
     {
         try
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-            Parent root = loader.load();
-            LoginController loginController = loader.getController();
-
             String token = App.getCSRFToken();
             OkHttpClient client = App.httpClient;
 
@@ -54,7 +50,8 @@ public class AdminController {
             Response response = call.execute();
             String responseBody = response.body().string();
 
-            if (response.isSuccessful()) {   
+            if (response.isSuccessful()) 
+            {   
                 allDoctors = new JSONArray(responseBody);
 
                 for(int i =  0; i < allDoctors.length(); i++)
@@ -149,7 +146,8 @@ public class AdminController {
     {
         try
         {
-            App.setRoot("Register Doctor");
+            //App.setRoot("Register Doctor");
+            App.setRoot("Appointment View");
         }
         catch(IOException e)
         {

@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -30,6 +32,7 @@ public class App extends Application {
     public static String sessionCookie;
     public static String csrfCookie;
     public static String token;
+    public static JSONArray allAppointments;
     public static SimpleCookieJar cookieJar = new SimpleCookieJar();
     public static OkHttpClient httpClient = new OkHttpClient.Builder()
                     .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
