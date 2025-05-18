@@ -14,10 +14,10 @@
          <children>
             <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: grey;">
                <children>
-                  <Button layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" text="BACK" />
+                  <Button fx:id="backBtn" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" text="BACK" />
                </children>
             </AnchorPane>
-            <Label fx:id="headerLabel" prefHeight="59.0" prefWidth="587.0" text="Appointments for 02-14-08">
+            <Label fx:id="headerLabel" prefHeight="59.0" prefWidth="652.0" text="Appointments for 02-14-2008">
                <font>
                   <Font name="Arial Black" size="40.0" />
                </font>

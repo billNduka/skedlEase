@@ -39,6 +39,12 @@ public class LoginController {
     public String cookie;
     public String csrfCookie;
 
+    @FXML
+    public void initialize()
+    {
+        createAlerts();
+    }
+
     public void createAlerts()
     {
         successAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -55,18 +61,17 @@ public class LoginController {
         failureAlert.setTitle("Login status");
         failureAlert.setHeaderText("Login status");
         failureAlert.setContentText("Login unsuccessful");
-    }
-
-    
+    } 
 
     public void submit(ActionEvent e) {
         System.out.println("Logging in...");
+        loggingInAlert.show();
+
 
         String token = App.getCSRFToken(); 
         App.token = token;
         System.out.println(token);
         OkHttpClient client = App.httpClient;
-        createAlerts();
 
         try {
             JSONObject json = new JSONObject();
@@ -90,7 +95,6 @@ public class LoginController {
             if (response.isSuccessful()) {
 
                 JSONObject responseJSON = new JSONObject(response.body().string());
-                //System.out.println(responseJSON.toString());
                 String role = responseJSON.getJSONObject("user").getString("user_role");
 
                 if(role.equals("admin"))
@@ -114,7 +118,8 @@ public class LoginController {
                     App.setRoot("primary");
                 }
                     
-            } else {
+            } else 
+            {
                 System.out.println("Status: " + response.code());
                 String responseText = response.body().string();
                 System.out.println("Response: " + responseText);

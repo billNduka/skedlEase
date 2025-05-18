@@ -14,7 +14,7 @@
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="78.0" minWidth="802.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="backBtn" layoutX="37.0" layoutY="27.0" mnemonicParsing="false" style="-fx-background-color: black;" text="BACK" textFill="WHITE">
+                  <Button fx:id="backBtn" layoutX="37.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: black;" text="BACK" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="15.0" />
                      </font>

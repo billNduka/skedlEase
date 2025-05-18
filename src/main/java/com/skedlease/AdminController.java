@@ -146,7 +146,18 @@ public class AdminController {
     {
         try
         {
-            //App.setRoot("Register Doctor");
+            App.setRoot("Register Doctor");
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    public void viewAppointments()
+    {
+        try
+        {
             App.setRoot("Appointment View");
         }
         catch(IOException e)
@@ -154,4 +165,5 @@ public class AdminController {
             e.printStackTrace();
         }
     }
+
 }

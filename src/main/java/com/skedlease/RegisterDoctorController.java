@@ -172,4 +172,15 @@ public class RegisterDoctorController {
         }
     }
 
+    public void back()
+    {
+        try
+        {
+            App.setRoot("admin");
+        } catch(IOException E)
+        {
+            E.printStackTrace();
+        }
+    }
+
 }

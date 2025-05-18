@@ -64,8 +64,14 @@ public class DayAppointmentsController {
         }
     }
 
-    public void back(ActionEvent event) 
+    public void back() 
     {
-        // Handle back button navigation if needed
+        try
+        {
+            App.setRoot("Appointment View");
+        } catch(IOException E)
+        {
+            E.printStackTrace();
+        }
     }
 }
