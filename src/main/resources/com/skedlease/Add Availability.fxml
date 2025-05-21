@@ -6,62 +6,60 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="1.7976931348623157E308" minHeight="920.0" minViewportHeight="920.0" minViewportWidth="820.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.AddAvailabilityController">
+<ScrollPane fitToHeight="True" minHeight="920.0" fitToWidth="true" minViewportHeight="920.0" minViewportWidth="820.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@registerDoctor.css"  style="-fx-background-color: #2a75f5;" fx:controller="com.skedlease.AddAvailabilityController">
   <content>
-    <AnchorPane maxHeight="1.7976931348623157E308" minHeight="920.0" minWidth="820.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox spacing="0" style="-fx-background-color: #2a75f5;" prefHeight="Infinity" prefWidth="550.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="78.0" minWidth="802.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="78.0" minWidth="802.0" style="-fx-background-color: #2a75f5;" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="backBtn" layoutX="37.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: black;" text="BACK" textFill="WHITE">
+                  <Button fx:id="backBtn" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#back" text="&lt;">
                      <font>
                         <Font name="Arial Black" size="15.0" />
                      </font>
                   </Button>
                </children>
             </AnchorPane>
-            <TextField fx:id="startTime" layoutX="31.0" layoutY="206.0" prefHeight="51.0" prefWidth="228.0" promptText="HH:MM:SS">
+            <VBox fx:id="headerContainer" alignment="CENTER">
+            <Label fx:id="headerLabel" text="Add Availability for 2008-14-02" textFill="black">
+               <font>
+                  <Font name="Arial Black" size="45.0" />
+               </font>
+            </Label>
+            </VBox>
+            <StackPane alignment="CENTER" maxWidth="Infinity" StackPane.alignment="CENTER" styleClass="formContainer">
+               <VBox alignment="CENTER" spacing="20" maxWidth="600" styleClass="formContainer2">
+            <TextField fx:id="startTime" prefHeight="51.0" prefWidth="228.0" promptText="Start Time - HH:MM:SS">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="endTime" layoutX="313.0" layoutY="206.0" prefHeight="52.0" prefWidth="206.0" promptText="HH:MM:SS">
+            <TextField fx:id="endTime" prefHeight="52.0" prefWidth="206.0" promptText="End Time - HH:MM:SS">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
             </TextField>
-            <Label fx:id="headerLabel" layoutX="31.0" layoutY="78.0" text="Add Availability for 2008-14-02">
-               <font>
-                  <Font name="Arial Black" size="40.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="doctorsBox" layoutX="31.0" layoutY="330.0" onAction="#pickDoctor" prefHeight="15.0" prefWidth="379.0" promptText="Registered Doctors" />
-            <Label fx:id="specialization1" layoutX="31.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0">
+            <ComboBox fx:id="doctorsBox" onAction="#pickDoctor" prefHeight="15.0" prefWidth="550.0" promptText="Registered Doctors" />
+            <Label fx:id="specialization1" prefHeight="42.0" prefWidth="98.0">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="specialization2" layoutX="267.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0">
+            <Label fx:id="specialization2" prefHeight="42.0" prefWidth="98.0">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
             </Label>
-            <Button layoutX="31.0" layoutY="409.0" mnemonicParsing="false" onAction="#addAvailability" text="ADD">
+            <Button fx:id="addAvailability" mnemonicParsing="false" onAction="#addAvailability" text="ADD">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Label fx:id="headerLabel1" layoutX="31.0" layoutY="137.0" text="Start Time">
-               <font>
-                  <Font name="Arial Black" size="40.0" />
-               </font>
-            </Label>
-            <Label fx:id="headerLabel11" layoutX="313.0" layoutY="137.0" text="End Time">
-               <font>
-                  <Font name="Arial Black" size="40.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
+            </VBox>
+         </StackPane>
+         </children></VBox>
   </content>
 </ScrollPane>

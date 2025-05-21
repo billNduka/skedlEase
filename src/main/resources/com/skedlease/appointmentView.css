@@ -1,0 +1,19 @@
+#root{
+    -fx-padding: 100 100 100 100;
+    -fx-background-color:rgb(238, 240, 243);
+}
+.titleLabel{
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+}
+.gridItems{
+    -fx-background-color: #ffffff; 
+    -fx-border-color: rgb(238, 240, 243); 
+    -fx-border-width: 5px;
+    -fx-background-radius: 50;
+    -fx-padding: 10 0 0 0;
+}
+.date{
+    -fx-padding: 10 0 30 0;
+}

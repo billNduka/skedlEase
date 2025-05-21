@@ -1,0 +1,22 @@
+.RegContainer{
+    -fx-alignment: center;
+    -fx-padding: 20 30 25 30;
+    -fx-pref-height: 700px;
+}
+.registerLabel{
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-padding: 30 0 25 0;
+}
+#email, #lastName, #firstName, #phoneNumber, #matricNumber, #password1, #password2{
+    -fx-font-size: 15px;
+    -fx-padding: 5 10 5 10;
+}
+#SubmitBtn{
+    -fx-padding: 15 100 15 100;
+    -fx-background-radius: 50;
+    -fx-text-fill: white;
+    -fx-background-color: rgb(44, 44, 214);
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}

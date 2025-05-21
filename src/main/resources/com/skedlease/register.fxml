@@ -8,69 +8,49 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.RegisterController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@register.css" styleClass="RegContainer" fx:controller="com.skedlease.RegisterController">
    <children>
-      <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="600.0" text="REGISTER PATIENT" textAlignment="CENTER">
+      <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="600.0" text="Register Patient" textAlignment="CENTER" stylesheets="@register.css" styleClass="registerLabel">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" prefHeight="26.0" prefWidth="278.0" text="EMAIL ADDRESS">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
+      <TextField fx:id="email" prefHeight="28.0" prefWidth="600.0" promptText="Email">
          <VBox.margin>
-            <Insets top="30.0" />
-         </VBox.margin>
-      </Label>
-      <TextField fx:id="email" prefHeight="28.0" prefWidth="600.0">
-         <VBox.margin>
-            <Insets />
+            <Insets top="0" right="0" bottom="10" left="0"/>
          </VBox.margin>
       </TextField>
-      <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="70.0" prefHeight="26.0" prefWidth="278.0" text="FIRST NAME">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="firstName" layoutX="10.0" layoutY="100.0" prefHeight="28.0" prefWidth="600.0" />
-      <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="70.0" prefHeight="26.0" prefWidth="278.0" text="LAST NAME">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="lastName" layoutX="10.0" layoutY="100.0" prefHeight="28.0" prefWidth="600.0" />
-      <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="186.0" prefHeight="26.0" prefWidth="278.0" text="PHONE NUMBER">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="phoneNumber" layoutX="10.0" layoutY="216.0" prefHeight="28.0" prefWidth="600.0" />
-      <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="244.0" prefHeight="26.0" prefWidth="278.0" text="MATRIC NUMBER">
-         <font>
-            <Font name="Verdana" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="matricNumber" layoutX="10.0" layoutY="274.0" prefHeight="28.0" prefWidth="600.0" />
-      <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="302.0" prefHeight="47.0" prefWidth="278.0" text="PASSWORD:">
-         <font>
-            <Font name="Verdana" size="13.0" />
-         </font>
-         <padding>
-            <Insets top="10.0" />
-         </padding>
-      </Label>
-      <PasswordField fx:id="password1" layoutX="10.0" layoutY="316.0" />
-      <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="70.0" prefHeight="28.0" prefWidth="278.0" text="CONFIRM PASSWORD:">
-         <font>
-            <Font name="Verdana" size="13.0" />
-         </font>
+      <TextField fx:id="firstName" layoutX="10.0" layoutY="100.0" prefHeight="28.0" prefWidth="600.0" promptText="First Name">
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets top="0" right="0" bottom="10" left="0"/>
          </VBox.margin>
-      </Label>
-      <PasswordField fx:id="password2" />
-      <Button fx:id="SubmitBtn" mnemonicParsing="false" onAction="#submit" prefHeight="24.0" prefWidth="82.0" text="SUBMIT">
+      </TextField>
+      <TextField fx:id="lastName" layoutX="10.0" layoutY="100.0" prefHeight="28.0" prefWidth="600.0" promptText="Last Name">
+         <VBox.margin>
+            <Insets top="0" right="0" bottom="10" left="0"/>
+         </VBox.margin>
+      </TextField>
+      <TextField fx:id="phoneNumber" layoutX="10.0" layoutY="216.0" prefHeight="28.0" prefWidth="600.0" promptText="Phone Number">
+         <VBox.margin>
+            <Insets top="0" right="0" bottom="10" left="0"/>
+         </VBox.margin>
+      </TextField>
+      <TextField fx:id="matricNumber" layoutX="10.0" layoutY="274.0" prefHeight="28.0" prefWidth="600.0" promptText="Matric Number">
+         <VBox.margin>
+            <Insets top="0" right="0" bottom="10" left="0"/>
+         </VBox.margin>
+      </TextField>
+      <PasswordField fx:id="password1" layoutX="10.0" layoutY="316.0" promptText="Password">
+         <VBox.margin>
+            <Insets top="0" right="0" bottom="10" left="0"/>
+         </VBox.margin>
+      </PasswordField>
+      <PasswordField fx:id="password2" promptText="Confirm Password">
+         <VBox.margin>
+            <Insets top="0" right="0" bottom="10" left="0"/>
+         </VBox.margin>
+      </PasswordField>
+      <Button fx:id="SubmitBtn" mnemonicParsing="false" onAction="#submit" text="Submit">
          <VBox.margin>
             <Insets bottom="2.0" left="20.0" top="8.0" />
          </VBox.margin>

@@ -1,0 +1,23 @@
+.login{
+    -fx-padding: 10 20 0 20;
+    -fx-alignment: center;
+}
+.loginLabel{
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-padding: 0 0 40 0;
+}
+#username, #password{
+    -fx-padding: 10 10 10 10;
+    -fx-text-fill: rgb(19, 4, 4);
+    -fx-font-size: 15px;
+}
+#Link{
+    -fx-padding: 10 0 0 0;
+}
+#SubmitBtn{
+    -fx-padding: 10 40 10 40;
+    -fx-text-fill: white;
+    -fx-background-color: rgb(44, 44, 214);
+    -fx-background-radius: 50;
+}

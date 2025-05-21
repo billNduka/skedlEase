@@ -1,0 +1,36 @@
+
+.formContainer{
+    -fx-padding: 40 0 40 0;
+    -fx-background-color: #2a75f5;
+}
+.formContainer2{
+    -fx-padding: 30 30 30 30;
+    -fx-background-radius: 50;
+    -fx-background-color: #F5F5F5;
+}
+#registerBtn, #addAvailability{
+    -fx-background-color: rgb(44, 44, 214);
+    -fx-padding: 15 100 15 100;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 50;
+}
+#registerText{
+    -fx-padding: 0 0 40 0;
+}
+#specializations, #doctorsBox{
+    -fx-font-size: 15px;
+    -fx-padding: 10 0 10 0;
+}
+#backBtn{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-padding: 10 20 13 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-background-radius: 50;
+}
+#headerContainer{
+    -fx-padding: 60 0 60 0;
+}
