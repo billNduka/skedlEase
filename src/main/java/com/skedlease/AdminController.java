@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class AdminController {
     @FXML
-    private VBox doctorListContainer;
+    private FlowPane doctorListContainer;
 
     private JSONArray allDoctors;
     private List<String> fullNames = new ArrayList<>();
