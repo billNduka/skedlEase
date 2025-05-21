@@ -7,439 +7,439 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.AvailabilityViewController">
+<GridPane fx:id="root" maxHeight="-Infinity"  maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@appointmentView.css" fx:controller="com.skedlease.AvailabilityViewController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" styleClass="gridItems">
          <children>
-            <Label fx:id="date1" text="14-04-2022">
+            <Label fx:id="date1" text="14-04-2022" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count1" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.rowIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date7" text="Label">
+            <Label fx:id="date7" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count7" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date2" text="Label">
+            <Label fx:id="date2" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count2" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.rowIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date13" text="Label">
+            <Label fx:id="date13" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count13" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.rowIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date19" text="Label">
+            <Label fx:id="date19" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count19" layoutX="40.0" layoutY="62.0" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.rowIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date25" text="Label">
+            <Label fx:id="date25" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count25" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date26" text="Label">
+            <Label fx:id="date26" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count26" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date20" text="Label">
+            <Label fx:id="date20" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count20" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date14" text="Label">
+            <Label fx:id="date14" text="Label" styleClass="date"> 
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count14" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date8" text="Label">
+            <Label fx:id="date8" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count8" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date3" text="Label">
+            <Label fx:id="date3" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count3" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date4" text="Label">
+            <Label fx:id="date4" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count4" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date5" text="Label">
+            <Label fx:id="date5" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count5" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="5" styleClass="gridItems">
          <children>
-            <Label fx:id="date6" text="Label">
+            <Label fx:id="date6" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count6" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="5" GridPane.rowIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date12" text="Label">
+            <Label fx:id="date12" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count12" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="5" GridPane.rowIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date18" text="Label">
+            <Label fx:id="date18" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count18" layoutX="40.0" layoutY="91.0" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="5" GridPane.rowIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date30" text="Label">
+            <Label fx:id="date30" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count30" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="4" GridPane.rowIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date29" text="Label">
+            <Label fx:id="date29" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count29" layoutX="40.0" layoutY="39.0" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date28" text="Label">
+            <Label fx:id="date28" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count28" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="gridItems">
          <children>
-            <Label fx:id="date27" text="Label">
+            <Label fx:id="date27" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count27" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date21" text="Label">
+            <Label fx:id="date21" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count21" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date15" text="Label">
+            <Label fx:id="date15" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count15" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date9" text="Label">
+            <Label fx:id="date9" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count9" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date10" text="Label">
+            <Label fx:id="date10" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count10" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="4" GridPane.rowIndex="1" styleClass="gridItems">
          <children>
-            <Label fx:id="date11" text="Label">
+            <Label fx:id="date11" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count11" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="4" GridPane.rowIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date17" text="Label">
+            <Label fx:id="date17" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count17" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="4" GridPane.rowIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date23" text="Label">
+            <Label fx:id="date23" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count23" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date22" text="Label">
+            <Label fx:id="date22" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count22" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="2" styleClass="gridItems">
          <children>
-            <Label fx:id="date16" text="Label">
+            <Label fx:id="date16" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count16" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+      <VBox alignment="TOP_CENTER" onMouseClicked="#handleDayClick" prefHeight="50.0" prefWidth="25.0" GridPane.columnIndex="5" GridPane.rowIndex="3" styleClass="gridItems">
          <children>
-            <Label fx:id="date24" text="Label">
+            <Label fx:id="date24" text="Label" styleClass="date">
                <font>
-                  <Font name="Arial Black" size="15.0" />
+                  <Font name="Arial Black" size="25.0" />
                </font>
             </Label>
             <Label fx:id="count24" text="Label">
                <font>
-                  <Font name="Arial Narrow" size="20.0" />
+                  <Font name="Arial Narrow" size="35.0" />
                </font>
             </Label>
          </children>

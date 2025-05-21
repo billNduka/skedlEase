@@ -6,28 +6,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.AdminController">
+
+<ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.AdminController" stylesheets="@admin.css">
    <content>
       <VBox maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="800.0">
          <children>
-            <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: grey;">
+            <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: rgb(115, 147, 179);" styleClass="navContainer">
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="Welcome Admin">
+                  <Label fx:id="welcomeLabel" layoutX="14.0" layoutY="14.0" text="Welcome Admin" styleClass="textLabel">
                      <font>
                         <Font name="Arial Black" size="19.0" />
                      </font>
                   </Label>
-                  <Label fx:id="userUsername" layoutX="344.0" layoutY="28.0" prefHeight="42.0" prefWidth="438.0" text="User: skedlease@gmail.com">
+                  <Label fx:id="userUsername" AnchorPane.rightAnchor="20.0" layoutY="35.0" text="User: skedlease@gmail.com" styleClass="textLabel">
                      <font>
                         <Font name="Arial Black" size="19.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="0" right="0" bottom="-20" left="0"/>
+                     </VBox.margin>
                   </Label>
                </children>
             </AnchorPane>
-            <Label text="Doctors">
+            <Label fx:id="doctorsText" text="Doctors">
                <font>
                   <Font name="Arial Black" size="40.0" />
                </font>
@@ -35,21 +41,26 @@
                   <Insets bottom="30.0" left="30.0" />
                </VBox.margin>
             </Label>
-            <VBox fx:id="doctorListContainer" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="100.0" spacing="10" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 2%;">
+            <FlowPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:id="doctorListContainer" hgap="20" vgap="20" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 2%;">
                <padding>
                   <Insets bottom="10" left="15.0" right="5.0" top="10" />
                </padding>
                <VBox.margin>
-                  <Insets left="15.0" right="5.0" />
+                  <Insets left="15.0" right="5.0" bottom="60.0"/>
                </VBox.margin>
-            </VBox>
-            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+            </FlowPane>
+            <HBox alignment="CENTER">
+            <ButtonBar>
+                <VBox.margin>
+                  <Insets top="60.0" bottom="30.0"/>
+               </VBox.margin>
                <buttons>
-                <Button fx:id="viewAvailabiliyButton" mnemonicParsing="false" onAction="#viewAvailability" text="View Availability" />
+               <Button fx:id="viewAvailabiliyButton" mnemonicParsing="false" onAction="#viewAvailability" text="View Availability" />
+                <Button fx:id="viewAppointmentsButton" mnemonicParsing="false" onAction="#viewAppointments" text="View all appointments" />
                   <Button fx:id="addDoctorButton" mnemonicParsing="false" onAction="#addDoctor" text="Add doctor" />
-                  <Button fx:id="viewAppointmentsButton1" layoutX="478.0" layoutY="18.0" mnemonicParsing="false" onAction="#viewAppointments" text="View all appointments" />
                </buttons>
             </ButtonBar>
+            </HBox>
          </children>
       </VBox>
    </content>

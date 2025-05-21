@@ -1,0 +1,27 @@
+.navContainer{
+    -fx-background-color: rgb(42, 84, 148);
+}
+#welcomeLabel{
+    -fx-text-fill: white;
+    -fx-padding: 10 0 0 0;
+}
+#userUsername{
+    -fx-text-fill: white;
+    -fx-padding: -10 0 0 0;
+    -fx-text-alignment: RIGHT;
+}
+#doctorsText{
+    -fx-padding: 30 0 0 0;
+}
+#doctorListContainer{
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+#addDoctorButton, #viewAppointmentsButton, #viewAvailabiliyButton{
+    -fx-background-color: #1449ac;
+    -fx-text-fill: white;
+    -fx-padding: 20 80 20 80;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 50;
+}

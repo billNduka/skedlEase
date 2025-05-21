@@ -1,0 +1,18 @@
+#backBtn{
+    -fx-padding: 10 20 13 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-background-radius: 50;
+}
+#appointmentListContainer, #availabilityListContainer{
+    -fx-padding: 30 30 30 30;
+    -fx-background-radius: 8;
+}
+#addAvailability{
+    -fx-background-color: #1449ac;
+    -fx-text-fill: white;
+    -fx-padding: 20 80 20 80;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 50;
+}

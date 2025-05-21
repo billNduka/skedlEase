@@ -5,16 +5,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.DayAppointmentsController">
+<ScrollPane fitToWidth="true" fitToHeight="true" maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1"  xmlns:fx="http://javafx.com/fxml/1" stylesheets="@dayAppointments.css" fx:controller="com.skedlease.DayAppointmentsController">
    <content>
       <VBox maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="800.0">
          <children>
-            <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: grey;">
+            <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color:  #F5F5F5;">
                <children>
-                  <Button fx:id="backBtn" layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" text="BACK" />
+                  <Button fx:id="backBtn" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#back" text="&lt;" style="-fx-background-color: black;" textFill="WHITE"/>
                </children>
             </AnchorPane>
             <Label fx:id="headerLabel" prefHeight="59.0" prefWidth="652.0" text="Appointments for 02-14-2008">
@@ -22,16 +23,16 @@
                   <Font name="Arial Black" size="40.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" />
+                  <Insets bottom="30.0" left="30.0" top="30.0" />
                </VBox.margin>
             </Label>
-            <VBox fx:id="appointmentListContainer" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="100.0" spacing="10" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 2%;">
+            <FlowPane fx:id="appointmentListContainer" xmlns="http://javafx.com/javafx" hgap="20" vgap="20" style="-fx-border-width: 2px; -fx-border-color: black; -fx-border-radius: 2%; -fx-background-color:  #FFFFFF;">
                <padding>
                   <Insets bottom="10" left="15.0" right="5.0" top="10" />
                </padding>
                <VBox.margin>
                   <Insets left="15.0" right="5.0" />
-               </VBox.margin></VBox>
+               </VBox.margin></FlowPane>
          </children>
       </VBox>
    </content>

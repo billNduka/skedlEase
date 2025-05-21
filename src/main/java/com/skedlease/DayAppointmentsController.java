@@ -16,7 +16,7 @@ public class DayAppointmentsController
     public String date;
 
     @FXML
-    private VBox appointmentListContainer;
+    private FlowPane appointmentListContainer;
 
     @FXML
     private Label headerLabel;

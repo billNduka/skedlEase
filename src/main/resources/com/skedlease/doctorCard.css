@@ -1,0 +1,9 @@
+#deleteButton{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(151, 5, 5);
+}
+#viewDetailsButton, #editDetailsButton, #editButton{
+    -fx-background-radius: 50;
+    -fx-padding: 5 0 5 0;
+}
