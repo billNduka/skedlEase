@@ -53,6 +53,7 @@ public class AdminController {
             if (response.isSuccessful()) 
             {   
                 allDoctors = new JSONArray(responseBody);
+                App.allDoctors = allDoctors;
 
                 for(int i =  0; i < allDoctors.length(); i++)
                 {
@@ -159,6 +160,18 @@ public class AdminController {
         try
         {
             App.setRoot("Appointment View");
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void viewAvailability()
+    {
+        try
+        {
+            App.setRoot("Availability View");
         }
         catch(IOException e)
         {

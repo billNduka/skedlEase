@@ -33,6 +33,8 @@ public class App extends Application {
     public static String csrfCookie;
     public static String token;
     public static JSONArray allAppointments;
+    public static JSONArray allAvailable;
+    public static JSONArray allDoctors;
     public static SimpleCookieJar cookieJar = new SimpleCookieJar();
     public static OkHttpClient httpClient = new OkHttpClient.Builder()
                     .connectTimeout(30, java.util.concurrent.TimeUnit.SECONDS)

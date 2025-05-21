@@ -22,10 +22,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class AppointmentViewController 
+public class AvailabilityViewController 
 {
-    private JSONArray allAppointments;
-    private Integer[] noOfAppointments = new Integer[30];
+    private JSONArray allAvailable;
+    private Integer[] noAvailable = new Integer[30];
     @FXML private Label[] dateLabels = new Label[30];
     @FXML private Label[] countLabels = new Label[30];
     @FXML private GridPane root;
@@ -35,24 +35,23 @@ public class AppointmentViewController
     String formattedDate = today.format(formatter);
 
 
-
     @FXML 
-    public void initialize() {
+    public void initialize() 
+    {
         for (int i = 0; i < 30; i++) 
         {
             dateLabels[i] = (Label) root.lookup("#date" + (i + 1));
             countLabels[i] = (Label) root.lookup("#count" + (i + 1));
-            noOfAppointments[i] = 0; 
-        }
-
-        loadAppointments();
-        if (allAppointments != null) 
+            noAvailable[i] = 0; 
+        }    
+        loadAvailable();
+        if (allAvailable != null) 
         {
-            fillAppointmentView(allAppointments);
+            fillAvailabilityView(allAvailable);
         }
     }
 
-    public void loadAppointments()
+    public void loadAvailable()
     {
         try
         {
@@ -60,7 +59,7 @@ public class AppointmentViewController
             OkHttpClient client = App.httpClient;
 
             Request request = new Request.Builder()
-                .url("https://skedlease.onrender.com/appointments/")
+                .url("https://skedlease.onrender.com/slots")
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Referer", "https://skedlease.onrender.com/")
                 .addHeader("X-CSRFToken", token)
@@ -72,37 +71,39 @@ public class AppointmentViewController
             String responseBody = response.body().string();
             if(response.isSuccessful())
             {
-                allAppointments = new JSONArray(responseBody);
-                App.allAppointments = allAppointments;
+                allAvailable = new JSONArray(responseBody);
+                App.allAvailable = allAvailable;
             }
-
-        } 
-        catch (IOException | org.json.JSONException ex) 
+            else
+            {
+                System.out.println("Error: " + response.code());
+            }
+        }
+        catch(IOException e)
         {
-            ex.printStackTrace();
+            e.printStackTrace();
         }
     }
-
-    public void fillAppointmentView(JSONArray appointments)
+    public void fillAvailabilityView(JSONArray allAvailable) 
     {
         for (int i = 0; i < 30; i++) 
         {
             LocalDate date = today.plusDays(i);
             dateLabels[i].setText(date.format(formatter));
         }
-        
-        for (int i = 0; i < appointments.length(); i++) 
+
+        for (int i = 0; i < allAvailable.length(); i++) 
         {
-            JSONObject appointment = appointments.getJSONObject(i);
-            String appointmentDateStr = appointment.getJSONObject("availability_slot").getString("date");
+            JSONObject availability = allAvailable.getJSONObject(i);
+            String availableDateStr = availability.getString("date");
             for (int j = 0; j < 30; j++) 
             {
                 LocalDate date = today.plusDays(j);
                 String targetDateStr = date.format(formatter);
 
-                if (appointmentDateStr.equals(targetDateStr)) 
+                if (availableDateStr.equals(targetDateStr)) 
                 {
-                    noOfAppointments[j]++;
+                    noAvailable[j]++;
                     break;
                 }
             }
@@ -110,23 +111,21 @@ public class AppointmentViewController
 
         for (int i = 0; i < 30; i++) 
         {
-            countLabels[i].setText(noOfAppointments[i].toString());
+            countLabels[i].setText(noAvailable[i].toString());
         }
 
     }
-
-
-    @FXML
-    private void handleDayClick(MouseEvent event) {
+    public void handleDayClick(MouseEvent event)
+    {
         VBox clickedBox = (VBox) event.getSource();
         Label dateLabel = (Label) clickedBox.getChildren().get(0); 
         String date = dateLabel.getText();
 
         try
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Day Appointments.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Day Availabilities.fxml"));
             Parent root = loader.load();
-            DayAppointmentsController controller = loader.getController();
+            DayAvailabilityController controller = loader.getController();
             controller.setDate(date);
 
             Stage stage = (Stage) clickedBox.getScene().getWindow();
@@ -138,4 +137,5 @@ public class AppointmentViewController
             e.printStackTrace();
         }
     }
+
 }

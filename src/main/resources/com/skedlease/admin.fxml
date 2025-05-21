@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skedlease.AdminController">
    <content>
       <VBox maxHeight="1.7976931348623157E308" minHeight="900.0" minWidth="800.0">
@@ -46,8 +45,9 @@
             </VBox>
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
                <buttons>
-                <Button fx:id="viewAppointmentsButton" mnemonicParsing="false" onAction="#viewAppointments" text="View all appointments" />
+                <Button fx:id="viewAvailabiliyButton" mnemonicParsing="false" onAction="#viewAvailability" text="View Availability" />
                   <Button fx:id="addDoctorButton" mnemonicParsing="false" onAction="#addDoctor" text="Add doctor" />
+                  <Button fx:id="viewAppointmentsButton1" layoutX="478.0" layoutY="18.0" mnemonicParsing="false" onAction="#viewAppointments" text="View all appointments" />
                </buttons>
             </ButtonBar>
          </children>

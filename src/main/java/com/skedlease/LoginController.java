@@ -33,39 +33,11 @@ public class LoginController {
     @FXML
     private CheckBox isAdmin;
 
-    private Alert successAlert;
-    private Alert loggingInAlert;
-    private Alert failureAlert;
     public String cookie;
     public String csrfCookie;
 
-    @FXML
-    public void initialize()
-    {
-        createAlerts();
-    }
-
-    public void createAlerts()
-    {
-        successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle("Login status");
-        successAlert.setHeaderText("Login status");
-        successAlert.setContentText("Login successful");
-
-        loggingInAlert = new Alert(Alert.AlertType.INFORMATION);
-        loggingInAlert.setTitle("Login status");
-        loggingInAlert.setHeaderText("Login status");
-        loggingInAlert.setContentText("Logging in...");
-
-        failureAlert = new Alert(Alert.AlertType.ERROR);
-        failureAlert.setTitle("Login status");
-        failureAlert.setHeaderText("Login status");
-        failureAlert.setContentText("Login unsuccessful");
-    } 
-
     public void submit(ActionEvent e) {
         System.out.println("Logging in...");
-        loggingInAlert.show();
 
 
         String token = App.getCSRFToken(); 

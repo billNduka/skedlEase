@@ -9,9 +9,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import javafx.event.ActionEvent;
 import java.io.IOException;
+import javafx.scene.Parent;
 
-public class DayAppointmentsController {
-
+public class DayAppointmentsController 
+{
     public String date;
 
     @FXML
@@ -26,19 +27,21 @@ public class DayAppointmentsController {
         displayAppointments(App.allAppointments);
     }
 
-    public void displayAppointments(JSONArray allAppointments) {
-        // Set the header label to show the date
+    public void displayAppointments(JSONArray allAppointments) 
+    {
         headerLabel.setText("Appointments for " + date);
 
         appointmentListContainer.getChildren().clear();
 
-        for (int i = 0; i < allAppointments.length(); i++) {
+        for (int i = 0; i < allAppointments.length(); i++) 
+        {
             JSONObject appointment = allAppointments.getJSONObject(i);
-            System.out.println(appointment);
             JSONObject slot = appointment.getJSONObject("availability_slot");
             String appointmentDate = slot.getString("date");
             String doctorName = slot.getJSONObject("doctor").getJSONObject("user").getString("first_name") 
                 + " " + slot.getJSONObject("doctor").getJSONObject("user").getString("last_name");
+            String patientName = appointment.getJSONObject("patient").getJSONObject("user").getString("first_name") 
+                + " " + appointment.getJSONObject("patient").getJSONObject("user").getString("last_name");
 
             if (appointmentDate.equals(date)) {
                 try {
@@ -48,7 +51,7 @@ public class DayAppointmentsController {
                     AppointmentCardController controller = loader.getController();
                     controller.setCardData(
                         doctorName,
-                        "ID = " + String.valueOf(appointment.getJSONObject("patient").get("id")),
+                        patientName,
                         appointmentDate,
                         slot.getString("start_time"),
                         slot.getString("end_time"),
@@ -64,14 +67,16 @@ public class DayAppointmentsController {
         }
     }
 
-    public void back() 
-    {
-        try
-        {
-            App.setRoot("Appointment View");
-        } catch(IOException E)
-        {
-            E.printStackTrace();
+    @FXML
+    public void back() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Appointment View.fxml"));
+            Parent root = loader.load();
+            javafx.stage.Stage stage = (javafx.stage.Stage) appointmentListContainer.getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
