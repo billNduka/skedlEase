@@ -16,7 +16,7 @@ public class DayAvailabilityController
     public String date;
 
     @FXML
-    private VBox availabilityListContainer;
+    private FlowPane availabilityListContainer;
 
     @FXML
     private Label headerLabel;
