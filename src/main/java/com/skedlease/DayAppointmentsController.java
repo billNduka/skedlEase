@@ -68,8 +68,10 @@ public class DayAppointmentsController
     }
 
     @FXML
-    public void back() {
-        try {
+    public void back() 
+    {
+        try 
+        {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Appointment View.fxml"));
             Parent root = loader.load();
             javafx.stage.Stage stage = (javafx.stage.Stage) appointmentListContainer.getScene().getWindow();

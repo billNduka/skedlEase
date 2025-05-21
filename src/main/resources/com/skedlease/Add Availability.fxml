@@ -21,12 +21,12 @@
                   </Button>
                </children>
             </AnchorPane>
-            <TextField fx:id="startTimeLabel" layoutX="31.0" layoutY="206.0" prefHeight="51.0" prefWidth="228.0" promptText="First Name" text="HH:MM:SS">
+            <TextField fx:id="startTime" layoutX="31.0" layoutY="206.0" prefHeight="51.0" prefWidth="228.0" promptText="HH:MM:SS">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="endTimeLabel" layoutX="313.0" layoutY="206.0" prefHeight="52.0" prefWidth="206.0" promptText="Last Name" text="HH:MM:SS">
+            <TextField fx:id="endTime" layoutX="313.0" layoutY="206.0" prefHeight="52.0" prefWidth="206.0" promptText="HH:MM:SS">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Font name="Arial Black" size="40.0" />
                </font>
             </Label>
-            <ComboBox fx:id="doctorsBox" layoutX="31.0" layoutY="330.0" onAction="#getSelectedDoctor" prefHeight="15.0" prefWidth="379.0" promptText="Registered Doctors" />
+            <ComboBox fx:id="doctorsBox" layoutX="31.0" layoutY="330.0" onAction="#pickDoctor" prefHeight="15.0" prefWidth="379.0" promptText="Registered Doctors" />
             <Label fx:id="specialization1" layoutX="31.0" layoutY="511.0" prefHeight="42.0" prefWidth="98.0">
                <font>
                   <Font name="Arial Black" size="20.0" />

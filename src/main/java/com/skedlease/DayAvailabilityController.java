@@ -83,15 +83,17 @@ public class DayAvailabilityController
     @FXML
     public void addAvailability()
     {
-        try {
+        try 
+        {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Add Availability.fxml"));
             Parent root = loader.load();
             AddAvailabilityController controller = loader.getController();
-            //controller.setDate(date);
+            controller.setDate(date);
             javafx.stage.Stage stage = (javafx.stage.Stage) availabilityListContainer.getScene().getWindow();
             stage.setScene(new javafx.scene.Scene(root));
             stage.show();
-        } catch (IOException e) {
+        } catch (IOException e) 
+        {
             e.printStackTrace();
         }
     }
